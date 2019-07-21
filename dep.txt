@@ -1,0 +1,246 @@
+sudo apt install mc
+
+sudo apt install libluajit-5.1-dev libchromaprint-dev
+
+sudo apt install g++-6 libc6-dev-arm64-cross
+sudo apt-get install libtxc-dxtn-s2tc0
+sudo apt install docker.io
+sudo apt-get install libgmp-dev libmpfr-dev libmpc-dev
+sudo apt-get build-dep cmake
+
+
+
+https://github.com/TES3MP/openmw-tes3mp/wiki/Creating-tarball-packages-on-GNU-Linux
+
+
+
+sudo apt-get build-dep cmake
+git clone https://github.com/Kitware/CMake.git
+cd CMake
+./configure --prefix=/usr/local
+make
+sudo make install
+
+
+
+sudo apt-get build-dep libboost-all-dev
+wget https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.gz
+tar xvf boost_1_69_0.tar.gz
+cd boost_1_69_0
+./bootstrap.sh --prefix=/usr/local
+sudo ./b2 --with=all -j 2 install
+
+
+
+sudo apt-get build-dep libmygui-dev
+mkdir MyGUI
+cd MyGUI
+git checkout 82fa8d4fdcaa06cf96dfec8a057c39cbaeaca9c
+mkdir build
+cd build
+cmake -DMYGUI_RENDERSYSTEM=1 -DMYGUI_BUILD_DEMOS=OFF -DMYGUI_BUILD_TOOLS=OFF -DMYGUI_BUILD_PLUGINS=OFF -DCMAKE_INSTALL_PREFIX=/usr/local ..
+make
+sudo make install
+
+
+
+sudo apt-get build-dep libopenscenegraph-dev
+git clone https://github.com/scrawl/osg.git
+cd osg
+mkdir build
+cd build
+cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
+make
+sudo make install
+
+
+
+
+
+git clone git://code.qt.io/qt/qt5.git
+git checkout 5.5
+./init-repository
+./configure -opensource -nomake examples -nomake tests --prefix=/usr/local
+make
+sudo make install
+
+
+
+
+
+sudo build-dep ffmpeg
+sudo apt-get install yasm libmp3lame-dev libopus-dev
+git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg
+cd ffmpeg
+./configure --prefix=/usr/local --enable-shared --enable-gpl --enable-libvorbis --enable-libtheora --enable-libmp3lame --enable-libopus
+make
+sudo make install
+
+
+
+PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib ./tes3mp-deploy.sh -i -m
+
+
+
+PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib ./tes3mp-deploy.sh --skip-pkgs -i -m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo apt update
+sudo apt upgrade
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 \
+                         --slave /usr/bin/g++ g++ /usr/bin/g++-7 
+sudo update-alternatives --config gcc
+gcc --version
+g++ --version
+
+
+compiling gwen
+
+
+
+wchodzimy do
+
+dependencies\bullet\CMakeLists.txt
+bullet bez
+examples
+test
+
+sed -i 's/SUBDIRS(examples)/\#SUBDIRS(examples)/g' ./dependencies/bullet/CMakeLists.txt
+sed -i 's/ENABLE_TESTING()/\#ENABLE_TESTING()/g' ./dependencies/bullet/CMakeLists.txt
+sed -i 's/SUBDIRS(test)/\#SUBDIRS(test)/g' ./dependencies/bullet/CMakeLists.txt
+
+
+dependencies\raknet\CMakeLists.txt
+raknet bez
+plugins
+
+dependencies/raknet/lib/CMakeLists.txt
+
+sed -i 's/\${CrabNet_SOURCE_DIR}\/Source\/Plugins\/\*\.cpp/\#\${CrabNet_SOURCE_DIR}\/Source\/Plugins\/\*\.cpp/g' ./dependencies/raknet/lib/CMakeLists.txt
+
+###sed -i 's/add_subdirectory(Samples)/\#add_subdirectory(Samples)/g' ./dependencies/raknet/CMakeLists.txt
+
+
+
+sudo ln -s /usr/include/aarch64-linux-gnu/sys/types.h /usr/include/sys/types.h
+sudo ln -s /usr/include/aarch64-linux-gnu/sys/stat.h /usr/include/sys/stat.h
+
+
+sudo ln -s /usr/include/aarch64-linux-gnu/sys/* /usr/include/sys/
+
+
+
+
+
+
+
+
+
+/tes3mp.dir/dependencies
+dopisane /usr/lib/aarch64-linux-gnu
+
+
+cd ~
+git clone https://github.com/acoustid/chromaprint.git
+cd chromaprint
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TOOLS=ON .
+make
+sudo make install
+cd ~
+wget https://sunsite.icm.edu.pl/pub/gnu/gcc/gcc-7.1.0/gcc-7.1.0.tar.gz
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavcodec.so.57
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavcodec.so.57.*
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavutil.so.55
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavutil.so.55.*
+sudo rm -f /usr/lib/aarch64-linux-gnu/libswresample.so.2
+sudo rm -f /usr/lib/aarch64-linux-gnu/libswresample.so.2.*
+
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavcodec.so
+sudo ln -s /usr/lib/aarch64-linux-gnu/libavcodec.so.57.9.100 /usr/lib/aarch64-linux-gnu/libavcodec.so
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavutil.so
+sudo ln -s /usr/lib/aarch64-linux-gnu/libavutil.so.56.7.100 /usr/lib/aarch64-linux-gnu/libavutil.so
+sudo rm -f /usr/lib/aarch64-linux-gnu/libswresample.so
+sudo ln -s /usr/lib/aarch64-linux-gnu/libswresample.so.3.0.101 /usr/lib/aarch64-linux-gnu/libswresample.so
+
+
+
+
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavcodec.so && sudo ln -s libavcodec.so.58.9.100 /usr/lib/aarch64-linux-gnu/libavcodec.so
+sudo rm -f /usr/lib/aarch64-linux-gnu/libavutil.so && sudo ln -s libavutil.so.56.7.100 /usr/lib/aarch64-linux-gnu/libavutil.so
+sudo rm -f /usr/lib/aarch64-linux-gnu/libswresample.so && sudo ln -s libswresample.so.3.0.101 /usr/lib/aarch64-linux-gnu/libswresample.so
+
+sudo mv /usr/lib/aarch64-linux-gnu/libavcodec.so.58 /usr/lib/aarch64-linux-gnu/libavcodec.so.57
+sudo mv /usr/lib/aarch64-linux-gnu/libavutil.so.56 /usr/lib/aarch64-linux-gnu/libavutil.so.55
+
+
+
+
+
+
+
+/usr/bin/ld: warning: libavcodec.so.57, needed by //usr/lib/aarch64-linux-gnu/libchromaprint.so.1, may conflict with libavcodec.so.58
+/usr/bin/ld: warning: libavutil.so.55, needed by //usr/lib/aarch64-linux-gnu/libchromaprint.so.1, may conflict with libavutil.so.56
+/usr/bin/ld: warning: libswresample.so.2, needed by //usr/lib/aarch64-linux-gnu/libavcodec.so.57, may conflict with libswresample.so.3
+
+
+
+
+/usr/bin/ld: warning: libavcodec.so.57, needed by //usr/lib/aarch64-linux-gnu/libchromaprint.so.1, may conflict with libavcodec.so.58
+/usr/bin/ld: warning: libavutil.so.55, needed by //usr/lib/aarch64-linux-gnu/libchromaprint.so.1, may conflict with libavutil.so.56
+/usr/bin/ld: warning: libswresample.so.2, needed by //usr/lib/aarch64-linux-gnu/libavcodec.so.57, may conflict with libswresample.so.3
+
+
+sudo mv -f /usr/lib/aarch64-linux-gnu/libavcodec.so.58 /usr/lib/aarch64-linux-gnu/libavcodec_X.so.58
+sudo mv -f /usr/lib/aarch64-linux-gnu/libavutil.so.56 /usr/lib/aarch64-linux-gnu/libavutil.so.56_X
+sudo mv -f /usr/lib/aarch64-linux-gnu/libswresample.so.2 /usr/lib/aarch64-linux-gnu/libswresample.so.2_X
+
+
+
+
+
+sudo mv -f /usr/lib/aarch64-linux-gnu/libavcodec_X.so.58 /usr/lib/aarch64-linux-gnu/libavcodec.so.58
+sudo mv -f /usr/lib/aarch64-linux-gnu/libavutil.so.56_X /usr/lib/aarch64-linux-gnu/libavutil.so.56
+sudo mv -f /usr/lib/aarch64-linux-gnu/libswresample.so.2_X /usr/lib/aarch64-linux-gnu/libswresample.so.2
+
+
+[ 76%] Linking CXX executable ../../tes3mp
+/usr/bin/ld: warning: libavcodec.so.57, needed by //usr/lib/aarch64-linux-gnu/libchromaprint.so.1, may conflict with libavcodec.so.58
+/usr/bin/ld: warning: libavutil.so.55, needed by //usr/lib/aarch64-linux-gnu/libchromaprint.so.1, may conflict with libavutil.so.56
+/usr/bin/ld: warning: libswresample.so.2, needed by //usr/lib/aarch64-linux-gnu/libavcodec.so.57, not found (try using -rpath or -rpath-link)
+//usr/lib/aarch64-linux-gnu/libavcodec.so.57: undefined reference to `swr_alloc@LIBSWRESAMPLE_2'
+//usr/lib/aarch64-linux-gnu/libavcodec.so.57: undefined reference to `swr_close@LIBSWRESAMPLE_2'
+//usr/lib/aarch64-linux-gnu/libavcodec.so.57: undefined reference to `swr_init@LIBSWRESAMPLE_2'
+//usr/lib/aarch64-linux-gnu/libavcodec.so.57: undefined reference to `swr_free@LIBSWRESAMPLE_2'
+//usr/lib/aarch64-linux-gnu/libavcodec.so.57: undefined reference to `swr_is_initialized@LIBSWRESAMPLE_2'
+//usr/lib/aarch64-linux-gnu/libavcodec.so.57: undefined reference to `swr_convert@LIBSWRESAMPLE_2'
+collect2: error: ld returned 1 exit status
+apps/openmw/CMakeFiles/tes3mp.dir/build.make:7265: recipe for target 'tes3mp' failed
+make[2]: *** [tes3mp] Error 1
+CMakeFiles/Makefile2:556: recipe for target 'apps/openmw/CMakeFiles/tes3mp.dir/all' failed
+make[1]: *** [apps/openmw/CMakeFiles/tes3mp.dir/all] Error 2
+Makefile:129: recipe for target 'all' failed
+
+
+
+
+
+
+
+
+
+
+
+
