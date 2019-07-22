@@ -1,3 +1,12 @@
+https://github.com/openscenegraph/OpenSceneGraph
+
+
+
+
+
+
+
+
 sudo apt install mc
 
 sudo apt install libluajit-5.1-dev libchromaprint-dev
