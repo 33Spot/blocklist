@@ -47,11 +47,23 @@ sudo make install
 sudo apt-get build-dep libopenscenegraph-dev
 git clone https://github.com/scrawl/osg.git
 cd osg
-mkdir build
-cd build
+mkdir build && cd build
 cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
 make
 sudo make install
+
+
+
+sudo add-apt-repository ppa:ubuntu-x-swat/updates
+
+
+sudo apt-get update
+
+sudo apt-get dist-upgrade
+
+
+#sudo apt install ppa-purge && sudo ppa-purge ppa:ubuntu-x-swat/updates
+
 
 
 
@@ -76,15 +88,22 @@ cd ffmpeg
 make
 sudo make install
 
+ARCH=aarch64-linux-gnu
+
+PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib ./tes3mp-deploy.sh -i -m
 
 
-PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib ./tes3mp-deploy.sh -i -m
+
+PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib ./tes3mp-deploy.sh --skip-pkgs -i -m
 
 
-
-PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib ./tes3mp-deploy.sh --skip-pkgs -i -m
-
-
+cd ~
+cd dependencies
+wget https://github.com/bulletphysics/bullet3/archive/2.86.1.tar.gz
+tar xvf 2.86.1.tar.gz -C bullet
+#cd bullet3-2.86.1
+-DBUILD_CPU_DEMOS=OFF
+sudo make install
 
 
 
