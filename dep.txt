@@ -11,6 +11,7 @@ sudo apt-get build-dep cmake
 
 
 https://github.com/TES3MP/openmw-tes3mp/wiki/Creating-tarball-packages-on-GNU-Linux
+https://forum.openmw.org/viewtopic.php?t=3594
 
 
 
