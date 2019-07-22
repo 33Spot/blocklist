@@ -33,6 +33,29 @@ sudo ./b2 --with=all -j 2 install
 
 
 
+
+
+
+
+
+cd ~
+cd dependencies
+wget https://github.com/bulletphysics/bullet3/archive/2.86.1.tar.gz
+tar xvf 2.86.1.tar.gz -C bullet
+#cd bullet3-2.86.1
+-DBUILD_CPU_DEMOS=OFF
+sudo make install
+
+
+
+
+
+
+
+
+
+
+
 sudo apt-get build-dep libmygui-dev
 ####mkdir MyGUI
 ####cd MyGUI
@@ -151,14 +174,6 @@ PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/
 
 PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib ./tes3mp-deploy.sh --skip-pkgs -i -m
 
-
-cd ~
-cd dependencies
-wget https://github.com/bulletphysics/bullet3/archive/2.86.1.tar.gz
-tar xvf 2.86.1.tar.gz -C bullet
-#cd bullet3-2.86.1
--DBUILD_CPU_DEMOS=OFF
-sudo make install
 
 
 
