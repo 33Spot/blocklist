@@ -47,15 +47,82 @@ sudo ./b2 --with=all -j 2 install
 
 
 
+
+
+
+
+sudo apt install python2.7 python3.6
+sudo apt-get install python-dev
+sudo apt-get install python-numpy python-scipy
+sudo apt-get install python3-dev python3-pip python3-tk python3-lxml python3-six
+python3 -m ensurepip --default-pip
+python3 -m pip install --upgrade pip setuptools
+python3 setup.py install
+
+
+
+
+
+cd ~
+wget https://pypi.python.org/packages/be/08/bb5ffd1c32a951cbc26011ecb8557e59dc7a0a4975f0ad98b2cd7446f7dd/Cython-0.28.1.tar.gz#md5=c549effadb52d90bdcb1affc1e5dbb97
+tar xvf Cython-0.28.1.tar.gz
+cd Cython-0.28.1
+sudo python3 setup.py install
+
+
+
+
+cd ~
+git clone https://github.com/numpy/numpy.git
+cd numpy
+sudo apt install ruby-factory-girl-rails
+sudo python3 setup.py install
+
+
+
+
+#######cd ~
+#######cd dependencies
+#######wget https://github.com/bulletphysics/bullet3/archive/2.86.1.tar.gz
+#######tar xvf 2.86.1.tar.gz -C bullet
+########cd bullet3-2.86.1
+#######-DBUILD_CPU_DEMOS=OFF
+#######sudo make install
+
+
+
+
+
+
+
+
+
+sudo apt install libpython*
+sudo apt-get install libffi-dev
+sudo pip install cffi
+sudo apt install python-all-dev
+
+python-config --includes
+
+-I/usr/include/python2.7 -I/usr/include/arm-linux-gnueabihf/python2.7
+
+python3-config --includes
+
+-I/usr/include/python3.6m -I/usr/include/arm-linux-gnueabihf/python3.6m
+
+
+/usr/include/python2.7
+/usr/include/arm-linux-gnueabihf/python2.7
+/usr/include/python3.6m
+/usr/include/arm-linux-gnueabihf/python3.6m
+
 cd ~
 cd dependencies
-wget https://github.com/bulletphysics/bullet3/archive/2.86.1.tar.gz
-tar xvf 2.86.1.tar.gz -C bullet
-#cd bullet3-2.86.1
--DBUILD_CPU_DEMOS=OFF
-sudo make install
-
-
+wget https://github.com/bulletphysics/bullet3/archive/2.88.tar.gz
+tar xvf 2.88.tar.gz
+cd ...............................
+py_bullety off
+./build_cmake_pybullet_double.sh
 
 
 
