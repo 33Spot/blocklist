@@ -7,7 +7,7 @@ https://github.com/mitchya1/router
 https://github.com/evilbunny2008/rock64-webgui/blob/master/README.md
 
 https://github.com/muXxer/rock64-docker-iota-fullnode#24-first-steps-on-the-rock64
-
+https://github.com/ayufan-rock64/linux-build/releases
 
 
 
