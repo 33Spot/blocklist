@@ -3,6 +3,8 @@
 https://killtacknine.com/building-an-ubuntu-16-04-router-part-1-network-interfaces/
 http://forum.codecall.net/topic/48438-configuring-your-linux-server-as-a-router/
 https://unix.stackexchange.com/questions/59478/share-internet-connection-from-computer-to-new-router
+https://github.com/mitchya1/router
+https://github.com/evilbunny2008/rock64-webgui/blob/master/README.md
 
 
 
