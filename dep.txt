@@ -1,4 +1,18 @@
 
+https://www.google.com/search?q=how+to+forward+ports+iptables&ie=utf-8&oe=utf-8
+https://www.google.com/search?q=iptables+prerouting&ie=utf-8&oe=utf-8
+https://netfilter.org/documentation/HOWTO/pl/NAT-HOWTO.html#toc5
+https://askubuntu.com/questions/579231/whats-the-difference-between-prerouting-and-forward-in-iptables
+https://explainshell.com/explain?cmd=iptables+-t+nat+-A+PREROUTING+-p+tcp+--dport+12299+-j+DNAT+--to-destination+10.10.10.199%3A22
+https://pl.wikibooks.org/wiki/Sieci_w_Linuksie/Netfilter/iptables
+https://pl.wikipedia.org/wiki/Iptables
+https://www.google.com/search?ei=Dk07XZXYNuX2qwGwx5ioAw&q=how+to+port+forward+linux+box&oq=how+to+port+forward+linux+box&gs_l=psy-ab.3..33i22i29i30.6342.9434..10561...0.0..0.186.2694.0j16......0....1..gws-wiz.......0i71j35i39j0i22i30j0i203j0i10i203j0.28HA1j_UFww&ved=0ahUKEwiVl8LkodPjAhVl-yoKHbAjBjUQ4dUDCAo&uact=5
+https://www.digitalocean.com/community/tutorials/how-to-forward-ports-through-a-linux-gateway-with-iptables
+https://www.google.com/search?q=port+forwarding+on+linux+server&ie=utf-8&oe=utf-8
+https://linuxhint.com/ssh-port-forwarding-linux/
+https://www.thewindowsclub.com/copy-urls-open-tabs-firefox-chrome
+https://addons.mozilla.org/en-US/firefox/addon/tabs2txt/
+https://addons.mozilla.org/en-US/firefox/addon/foxytab/
 
 https://killtacknine.com/building-an-ubuntu-16-04-router-part-1-network-interfaces/
 http://forum.codecall.net/topic/48438-configuring-your-linux-server-as-a-router/
