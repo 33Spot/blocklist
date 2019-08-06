@@ -97,13 +97,22 @@ sudo apt-get build-dep libboost-all-dev
 #cd boost_1_69_0
 #./bootstrap.sh --prefix=/usr/local
 #sudo ./b2 --with=all -j 2 install
+#wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.gz
+#tar xvf boost_1_64_0.tar.gz
+#cd boost_1_64_0
+#./bootstrap.sh --prefix=/usr/local
+#sudo ./b2 --with=all -j 2 install
 
 
+sudo apt-get build-dep libboost-all-dev
 wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.gz
 tar xvf boost_1_64_0.tar.gz
 cd boost_1_64_0
 ./bootstrap.sh --prefix=/usr/local
 sudo ./b2 --with=all -j 2 install
+
+
+
 
 
 TES3MP: Latest from the current stable branch (0.7.0 atm)
@@ -230,6 +239,16 @@ sudo apt-get dist-upgrade
 #sudo apt install ppa-purge && sudo ppa-purge ppa:ubuntu-x-swat/updates
 
 
+sudo apt-get build-dep libmygui-dev
+cd MyGUI
+git checkout 82fa8d4fdcaa06cf96dfec8a057c39cbaeaca9c
+mkdir build
+cd build
+cmake -DMYGUI_RENDERSYSTEM=1 -DMYGUI_BUILD_DEMOS=OFF -DMYGUI_BUILD_TOOLS=OFF -DMYGUI_BUILD_PLUGINS=OFF -DCMAKE_INSTALL_PREFIX=/usr/local ..
+make
+sudo make install
+
+
 
 
 
@@ -289,6 +308,8 @@ sudo make install
 
 
 
+
+
 git clone https://github.com/openthread/openthread
 cd openthread
 ./bootstrap
@@ -309,7 +330,6 @@ mkdir build && cd build
 cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
 make
 sudo make install
-
 
 
 
