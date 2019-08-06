@@ -1,3 +1,19 @@
+gnu compiler 6.5.0
+openscenegraph minimum 3.3.4
+3.4.1
+mygui 3.2.2
+sdl2 2.0.4
+openAL
+boost 1.64
+luajit 5.1
+
+
+
+
+
+
+
+
 
 https://www.google.com/search?q=how+to+forward+ports+iptables&ie=utf-8&oe=utf-8
 https://www.google.com/search?q=iptables+prerouting&ie=utf-8&oe=utf-8
@@ -66,16 +82,32 @@ sudo make install
 
 
 sudo apt-get build-dep libboost-all-dev
-wget https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.gz
-tar xvf boost_1_69_0.tar.gz
-cd boost_1_69_0
+
+#wget https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.gz
+#tar xvf boost_1_69_0.tar.gz
+#cd boost_1_69_0
+#./bootstrap.sh --prefix=/usr/local
+#sudo ./b2 --with=all -j 2 install
+
+
+wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.gz
+tar xvf boost_1_64_0.tar.gz
+cd boost_1_64_0
 ./bootstrap.sh --prefix=/usr/local
 sudo ./b2 --with=all -j 2 install
 
 
-
-
-
+TES3MP: Latest from the current stable branch (0.7.0 atm)
+CoreScripts: ditto
+CallFF: deprecated
+CrabNet: 4eeeaad2f6c11aeb82070df35169694b4fb7b04b
+Bullet: 2.86
+GCC: 6.4.0
+CMake: 3.5.2
+Boost: 1.64.0
+MyGUI: 82fa8d4fdcaa06cf96dfec8a057c39cbaeaca9c
+OSG: 3.4
+Qt: 5.5
 
 
 
@@ -283,9 +315,35 @@ PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/
 PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib ./tes3mp-deploy.sh --skip-pkgs -i -m
 
 
+wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
+tar xvf SDL2-2.0.10.tar.gz
+./configure
+make all
+sudo make install
 
 
 
+-- Could NOT find AudioIO (missing: AUDIOIO_INCLUDE_DIR) 
+-- Could NOT find QSA (missing: QSA_LIBRARY QSA_INCLUDE_DIR) 
+-- Could NOT find PortAudio (missing: PORTAUDIO_LIBRARY PORTAUDIO_INCLUDE_DIR) 
+Could NOT find JACK (missing: JACK_LIBRARY JACK_INCLUDE_DIR) 
+-- Could NOT find OPENSL (missing: OPENSL_LIBRARY OPENSL_INCLUDE_DIR OPENSL_ANDROID_INCLUDE_DIR) 
+
+
+
+
+
+
+sudo apt-get install libsdl-sound1.2-dev
+sudo apt-get install  libmyth-dev
+
+git clone git://repo.or.cz/openal-soft.git
+cd openal-soft 
+cd build
+cmake ..
+make
+
+sudo apt-get install libopenal-dev
 
 
 
