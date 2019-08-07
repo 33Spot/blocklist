@@ -24,6 +24,33 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/local/bin/gcc-6 60 --sl
 
 
 
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install gcc-6
+
+gcc-6 --version 
+
+sudo apt install g++-6
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+
+
+
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt install gcc-7
+
+gcc-7 --version 
+
+sudo apt install g++-7
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+
+
+
+
+
+
 https://www.google.com/search?q=how+to+forward+ports+iptables&ie=utf-8&oe=utf-8
 https://www.google.com/search?q=iptables+prerouting&ie=utf-8&oe=utf-8
 https://netfilter.org/documentation/HOWTO/pl/NAT-HOWTO.html#toc5
