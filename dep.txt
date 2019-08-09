@@ -548,6 +548,20 @@ Makefile:129: recipe for target 'all' failed
 
 
 
+[ 43%] Building CXX object components/CMakeFiles/components.dir/interpreter/installopcodes.cpp.o
+[ 43%] Building CXX object components/CMakeFiles/components.dir/interpreter/interpreter.cpp.o
+[ 44%] Building CXX object components/CMakeFiles/components.dir/interpreter/runtime.cpp.o
+In member function ‘void Interpreter::Runtime::pop()’:
+cc1plus: warning: ‘void* __builtin_memset(void*, int, unsigned int)’: specified size 4294967292 exceeds maximum object size 2147483647 [-Wstringop-overflow=]
+[ 44%] Building CXX object components/CMakeFiles/components.dir/interpreter/defines.cpp.o
+[ 44%] Building CXX object components/CMakeFiles/components.dir/translation/translation.cpp.o
+[ 45%] Building CXX object components/CMakeFiles/components.dir/terrain/world.cpp.o
+
+
+
+
+
+
 
 
 
