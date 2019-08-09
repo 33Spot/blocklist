@@ -1,3 +1,8 @@
+sudo apt install binutil*
+sudo apt-get install linux-headers-$(uname -r)
+
+
+
 gnu compiler 6.5.0
 openscenegraph minimum 3.3.4
 3.4.1
