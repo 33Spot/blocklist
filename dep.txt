@@ -31,6 +31,7 @@ cd gcc-build
  
  
  #-mfix-cortex-a53-835769 -mfix-cortex-a53-843419 -mtune=cortex-a53
+(aes, sha2)
 
 make
 sudo make install
