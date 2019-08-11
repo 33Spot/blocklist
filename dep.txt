@@ -162,6 +162,8 @@ cd boost_1_64_0
 ./bootstrap.sh --prefix=/usr/local
 sudo ./b2 --with=all -j 2 install
 
+sudo rm -f /usr/local/lib/libboost*
+sudo rm -f /usr/local/include/boost
 
 
 
