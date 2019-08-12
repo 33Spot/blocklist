@@ -2,6 +2,12 @@ sudo apt install binutil*
 sudo apt-get install linux-headers-$(uname -r)
 
 
+x86_64-linux	openmw-tes3mp
+i686-linux	openmw-tes3mp
+aarch64-linux	openmw-tes3mp
+
+
+
 
 gnu compiler 6.5.0
 openscenegraph minimum 3.3.4
