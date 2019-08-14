@@ -166,9 +166,10 @@ wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.gz
 tar xvf boost_1_64_0.tar.gz
 cd boost_1_64_0
 ./bootstrap.sh --prefix=/usr/local
-sudo ./b2 --with=all -j 2 install
+#sudo ./b2 --with=all -j 2 install
+sudo ./b2 -q --without-context --without-coroutine -s NO_BZIP2=1 toolset=gcc architecture=arm address-model=64 install
 
-sudo rm -f /usr/local/lib/libboost* && sudo rm -f /usr/local/include/boost
+sudo rm -f /usr/local/lib/libboost* && sudo rm -rf /usr/local/include/boost
 
 
 
@@ -404,6 +405,7 @@ PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/
 
 wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
 tar xvf SDL2-2.0.10.tar.gz
+cd SDL2-2.0.10
 ./configure
 make all
 sudo make install
