@@ -491,7 +491,9 @@ cd osg
 mkdir build && cd build
 cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
 make
-sudo make install
+#sudo make install
+sudo make install_ld_conf
+
 
 
 
@@ -499,11 +501,11 @@ sudo make install
 
 ARCH=aarch64-linux-gnu
 
-PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib ./tes3mp-deploy.sh -i -m
+PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib /usr/local/lib64 ./tes3mp-deploy.sh -i -m
 
 
 
-PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib ./tes3mp-deploy.sh --skip-pkgs -i -m
+PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib /usr/local/lib64 ./tes3mp-deploy.sh --skip-pkgs -i -m
 
 
 wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
