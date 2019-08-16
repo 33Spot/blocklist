@@ -24,6 +24,9 @@ sudo build-dep gcc
 
 
 
+sudo update-alternatives --config cc
+sudo update-alternatives --config c++
+
 
 
 
